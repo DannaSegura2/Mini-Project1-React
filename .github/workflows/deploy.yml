@@ -1,0 +1,36 @@
+name:  Despliegue de una aplicaicòn React
+
+on:
+  push:
+    branches:
+      - develop 
+
+permissions:
+  contents: write
+
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Chekout repository
+        uses: actions/chekout@v4
+
+      - name: Setup Node.jobs
+        uses: actions/setuo-node@v4
+        with:
+          node-version: 20
+      
+      - name: Install dependencies
+        uses: npm Install
+      
+      - name:  Build Project
+        uses: npm run build
+      
+      - name: Deploy to Github Pages
+        uses: paceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{secrets.GITHUB_TOKEN}}
+          publish_dir: ./dist
+          publish_branch: gh-pages
