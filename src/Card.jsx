@@ -39,7 +39,7 @@ export default function Card() {
         className={`mt-4 text-2xl font-semibold text-gray-800 text-center  ${darkMode ? 'text-white' : 'text-gray-600'}`}
       >
         {' '}
-        JOSE GOMEZ VILLA
+        PEDRO RAMOS COTE
       </h2>
       <p
         className={`mt-2 text-gray-600 text-center ${darkMode ? 'text-white' : 'text-gray-600'}`}
